@@ -1,20 +1,28 @@
 {
   "name": "kleinweb/php-coding-standards",
   "description": "PHP coding standards for Klein Digitial Initiatives",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "type": "phpcodesniffer-standard",
   "keywords": [
     "phpcs",
     "static analysis"
   ],
   "license": "GPL-3.0-or-later",
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/kleinweb/VIP-Coding-Standards"
+    }
+  ],
   "require": {
     "php": ">=8.0",
-    "squizlabs/php_codesniffer": "*",
     "dealerdirect/phpcodesniffer-composer-installer": "*",
+    "slevomat/coding-standard": "*",
+    "squizlabs/php_codesniffer": "*",
     "phpcompatibility/php-compatibility": "*",
     "phpcompatibility/phpcompatibility-paragonie": "*",
     "phpcompatibility/phpcompatibility-wp": "*",
+    "automattic/vipwpcs": "dev-wpcs-develop",
     "wp-coding-standards/wpcs": "dev-develop"
   },
   "config": {
