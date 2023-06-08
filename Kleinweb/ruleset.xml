@@ -241,7 +241,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
     </properties>
   </rule>
 
-  <rule ref="SlevomatCodingStandard.Arrays.AlphabeticallySortedByKeys" />
   <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation" />
   <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation" />
 
