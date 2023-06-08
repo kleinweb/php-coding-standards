@@ -134,12 +134,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore" />
   </rule>
   <rule ref="Squiz.NamingConventions.ValidVariableName">
+    <!-- WordPress has a lot of snake_case variables and properties we need to deal with. -->
+    <exclude name="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps" />
     <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore" />
   </rule>
 
   <!-- Array declaration rules -->
   <rule ref="Squiz.Arrays.ArrayBracketSpacing" />
 
+  <!-- General comments -->
   <rule ref="Generic.Commenting.DocComment">
     <!--  Results in too many false positives.  -->
     <exclude name="Generic.Commenting.DocComment.MissingShort" />
@@ -152,8 +155,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <exclude name="Squiz.Commenting.VariableComment.Missing" />
     <exclude name="Squiz.Commenting.VariableComment.MissingVar" />
   </rule>
-
-
 
 
   <!-- === WordPress =================================================================== -->
