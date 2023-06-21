@@ -50,118 +50,45 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
   <!-- === Rules ============================================================================= -->
 
-  <rule ref="PSR12" />
+  <rule ref="Doctrine">
+    <!-- Opinionated formatting rules are handled by php-cs-fixer. -->
+    <exclude name="Generic.Formatting" />
+    <exclude name="Squiz.WhiteSpace" />
 
-  <!-- PHP: The Bad Parts -->
-  <rule ref="Generic.PHP.NoSilencedErrors" />
-  <rule ref="Squiz.PHP.DiscouragedFunctions">
+    <!-- Handled by php-cs-fixer. -->
+    <exclude name="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" />
+    <exclude name="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue" />
+    <!-- We do want this sniff, but with an exception for empty functions. -->
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine" />
+
+    <!-- Handled by php-cs-fixer and PHPStan. -->
+    <exclude name="Squiz.Commenting.VariableComment.MissingVar" />
+
+    <!-- Can cause errors when overriding base classes. -->
+    <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint" />
+    <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint" />
+    <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint" />
+  </rule>
+
+  <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
     <properties>
-      <property name="forbiddenFunctions" type="array">
-        <!-- See disable_functions PHP-FPM configuration -->
-        <!--
-        https://github.com/szepeviktor/debian-server-tools/blob/master/webserver/phpfpm-pools/Skeleton-pool.conf#L23 -->
-        <!-- PHP built-in global functions -->
-        <element key="compact" value="null" />
-        <element key="create_function" value="null" />
-        <element key="define" value="null" />
-        <element key="die" value="null" />
-        <element key="echo" value="null" />
-        <element key="env" value="null" />
-        <element key="error_log" value="null" />
-        <element key="eval" value="null" />
-        <element key="exit" value="null" />
-        <element key="extract" value="null" />
-        <element key="goto" value="null" />
-        <element key="ini_set" value="null" />
-        <element key="list" value="null" />
-        <element key="phpinfo" value="null" />
-        <element key="print_r" value="null" />
-        <element key="print" value="null" />
-        <element key="var_dump" value="null" />
-        <!-- Type checking and converting function -->
-        <element key="boolval" value="(bool)" />
-        <element key="doubleval" value="(float)" />
-        <element key="doubleval" value="floatval" />
-        <element key="floatval" value="(float)" />
-        <element key="intval" value="(int)" />
-        <element key="is_double" value="is_float" />
-        <element key="is_integer" value="is_int" />
-        <element key="is_long" value="is_int" />
-        <element key="is_null" value="null" />
-        <element key="is_real" value="is_float" />
-        <element key="strval" value="(string)" />
-        <!-- Old functions -->
-        <element key="array_push" value="null" />
-        <element key="chop" value="rtrim" />
-        <element key="close" value="closedir" />
-        <element key="delete" value="unset" />
-        <element key="fputs" value="fwrite" />
-        <element key="ini_alter" value="ini_alter" />
-        <element key="is_writeable" value="is_writable" />
-        <element key="join" value="implode" />
-        <element key="key_exists" value="array_key_exists" />
-        <element key="mt_rand" value="random_int" />
-        <element key="pos" value="current" />
-        <element key="rand" value="random_int" />
-        <element key="show_source" value="highlight_file" />
-        <element key="sizeof" value="count" />
-        <element key="strchr" value="strstr" />
-      </property>
+      <property name="shortNullable" value="yes" />
     </properties>
   </rule>
 
-  <!-- File rules -->
-  <rule ref="Generic.Files.ExecutableFile" />
-  <rule ref="Generic.Files.OneObjectStructurePerFile" />
-  <rule ref="Squiz.Classes.ClassFileName" />
-  <rule ref="PEAR.Commenting.FileComment">
-    <exclude name="PEAR.Commenting.FileComment.MissingCategoryTag" />
-    <exclude name="PEAR.Commenting.FileComment.MissingLinkTag" />
-    <exclude name="PEAR.Commenting.FileComment.MissingVersion" />
+  <rule ref="Squiz.Commenting">
+    <!-- Too much nitpicking, especially with PHPStan type annotation comments. -->
+    <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
   </rule>
 
-  <!-- Class and method rules -->
-  <rule ref="PEAR.Commenting.ClassComment">
-    <exclude name="PEAR.Commenting.ClassComment.MissingCategoryTag" />
-    <exclude name="PEAR.Commenting.ClassComment.MissingPackageTag" />
-    <exclude name="PEAR.Commenting.ClassComment.MissingLicenseTag" />
-    <exclude name="PEAR.Commenting.ClassComment.MissingAuthorTag" />
-    <exclude name="PEAR.Commenting.ClassComment.MissingLinkTag" />
-  </rule>
-
-  <!-- Use camelCase -->
-  <rule ref="Squiz.NamingConventions.ValidFunctionName">
-    <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore" />
-  </rule>
   <rule ref="Squiz.NamingConventions.ValidVariableName">
     <!-- WordPress has a lot of snake_case variables and properties we need to deal with. -->
     <exclude name="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps" />
     <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore" />
   </rule>
 
-  <!-- Array declaration rules -->
-  <rule ref="Squiz.Arrays.ArrayBracketSpacing" />
-
-  <!-- General comments -->
-  <rule ref="Generic.Commenting.DocComment">
-    <!--  Results in too many false positives.  -->
-    <exclude name="Generic.Commenting.DocComment.MissingShort" />
-  </rule>
-  <rule ref="Squiz.Commenting">
-    <!-- Too much nitpicking. -->
-    <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
-
-    <!-- Redundant with strict types. -->
-    <exclude name="Squiz.Commenting.VariableComment.Missing" />
-    <exclude name="Squiz.Commenting.VariableComment.MissingVar" />
-  </rule>
-
-
-  <!-- === WordPress =================================================================== -->
-
   <rule ref="WordPress">
     <exclude name="Generic.Classes.OpeningBraceSameLine" />
-    <exclude name="Generic.Formatting.SpaceAfterCast" />
     <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie" />
     <exclude name="Generic.WhiteSpace.ArbitraryParenthesesSpacing" />
     <exclude name="Generic.WhiteSpace.DisallowSpaceIndent" />
@@ -195,131 +122,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable" />
   </rule>
 
-  <!-- WordPress-Core opposite rules -->
-  <rule ref="Generic.ControlStructures.DisallowYodaConditions" />
-  <rule ref="Generic.WhiteSpace.ArbitraryParenthesesSpacing">
-    <properties>
-      <property name="spacing" value="0" />
-    </properties>
-  </rule>
-  <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
-    <properties>
-      <property name="equalsSpacing" value="1" />
-      <property name="requiredSpacesAfterOpen" value="0" />
-      <property name="requiredSpacesBeforeClose" value="0" />
-    </properties>
-  </rule>
-
   <!-- We are not hosted on WordPress VIP, but their standards reflect best practices. -->
   <!-- FIXME: uninstallable due to apparent php 8.0 incompatibility (at least without lots of pain) -->
   <!-- <rule ref="WordPress-VIP-Go" /> -->
-
-  <!-- === Slevomat ============================================================================ -->
-
-  <!-- TODO: enabling this is pretty intense -->
-  <!-- <rule ref="SlevomatCodingStandard" /> -->
-
-  <!-- Strict typing -->
-  <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
-    <properties>
-      <property name="newlinesCountBetweenOpenTagAndDeclare" value="2" />
-      <property name="newlinesCountAfterDeclare" value="2" />
-      <property name="spacesCountAroundEqualsSign" value="0" />
-    </properties>
-  </rule>
-
-  <!-- Namespace -->
-  <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile" />
-  <rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration" />
-
-  <!-- Functional -->
-  <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint" />
-  <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint">
-    <properties>
-      <!-- Support PHP 7.2 -->
-      <property name="enableNativeTypeHint" value="false" />
-    </properties>
-  </rule>
-
-  <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation" />
-  <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation" />
-
-  <rule ref="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants" />
-  <rule ref="SlevomatCodingStandard.Classes.UselessLateStaticBinding" />
-
-  <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition" />
-  <rule ref="SlevomatCodingStandard.ControlStructures.DisallowContinueWithoutIntegerOperandInSwitch" />
-  <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEmpty" />
-  <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit" />
-  <rule ref="SlevomatCodingStandard.ControlStructures.RequireNullCoalesceOperator" />
-
-  <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly" />
-  <rule ref="SlevomatCodingStandard.Functions.StaticClosure" />
-  <rule ref="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator" />
-  <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators" />
-  <rule ref="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators" />
-  <rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator" />
-
-  <!-- Cleaning -->
-  <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch" />
-  <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure" />
-  <rule ref="SlevomatCodingStandard.Functions.UnusedParameter" />
-  <rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue" />
-  <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses" />
-  <!-- <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace" /> -->
-  <rule ref="SlevomatCodingStandard.Namespaces.UselessAlias" />
-  <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking" />
-  <rule ref="SlevomatCodingStandard.PHP.RequireExplicitAssertion" />
-  <rule ref="SlevomatCodingStandard.PHP.UselessSemicolon" />
-  <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable" />
-  <rule ref="SlevomatCodingStandard.Variables.UnusedVariable" />
-  <rule ref="SlevomatCodingStandard.Variables.UselessVariable" />
-
-  <!-- Formatting -->
-  <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility" />
-  <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference" />
-  <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming" />
-  <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming" />
-  <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming" />
-  <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming" />
-  <rule ref="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" />
-  <rule ref="SlevomatCodingStandard.ControlStructures.LanguageConstructWithParentheses" />
-  <rule ref="SlevomatCodingStandard.ControlStructures.NewWithParentheses" />
-  <rule ref="SlevomatCodingStandard.ControlStructures.RequireTernaryOperator" />
-  <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse" />
-  <rule ref="SlevomatCodingStandard.PHP.TypeCast" />
-  <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints" />
-  <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue" />
-  <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition" />
-  <rule ref="SlevomatCodingStandard.TypeHints.ParameterTypeHintSpacing" />
-
-  <!-- It is not possible to enforce FQCN-s any more -->
-  <rule ref="SlevomatCodingStandard.Namespaces.ReferenceUsedNamesOnly">
-    <properties>
-      <property name="allowFullyQualifiedExceptions" value="true" />
-      <property name="allowFullyQualifiedNameForCollidingClasses" value="true" />
-      <property name="namespacesRequiredToUse" type="array" />
-    </properties>
-  </rule>
-  <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions" />
-  <rule ref="SlevomatCodingStandard.Namespaces.MultipleUsesPerLine" />
-  <rule ref="SlevomatCodingStandard.Namespaces.UseDoesNotStartWithBackslash" />
-  <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation" />
-  <rule ref="SlevomatCodingStandard.Commenting.EmptyComment" />
-  <rule ref="SlevomatCodingStandard.Commenting.RequireOneLinePropertyDocComment" />
-  <rule ref="SlevomatCodingStandard.Commenting.UselessInheritDocComment" />
-  <rule ref="SlevomatCodingStandard.Commenting.UselessFunctionDocComment" />
-  <rule ref="SlevomatCodingStandard.ControlStructures.UselessIfConditionWithReturn" />
-  <rule ref="SlevomatCodingStandard.ControlStructures.UselessTernaryOperator" />
-
-  <rule ref="Generic.Metrics.CyclomaticComplexity">
-    <severity>0</severity>
-    <type>warning</type>
-  </rule>
-
-  <!-- We should be cognizant of long lines, but handle it case-by-case -->
-  <!-- <rule ref="Generic.Files.LineLength.TooLong">
-    <severity>1</severity>
-  </rule> -->
 
 </ruleset>
