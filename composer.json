@@ -1,7 +1,7 @@
 {
   "name": "kleinweb/php-coding-standards",
   "description": "PHP coding standards for Klein Digitial Initiatives",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "phpcodesniffer-standard",
   "keywords": [
     "phpcs",
@@ -17,13 +17,10 @@
   "require": {
     "php": ">=8.0",
     "dealerdirect/phpcodesniffer-composer-installer": "*",
-    "slevomat/coding-standard": "*",
     "squizlabs/php_codesniffer": "*",
-    "phpcompatibility/php-compatibility": "*",
-    "phpcompatibility/phpcompatibility-paragonie": "*",
-    "phpcompatibility/phpcompatibility-wp": "*",
     "automattic/vipwpcs": "dev-wpcs-develop",
-    "wp-coding-standards/wpcs": "dev-develop"
+    "wp-coding-standards/wpcs": "dev-develop",
+    "doctrine/coding-standard": "^12.0"
   },
   "config": {
     "allow-plugins": {
