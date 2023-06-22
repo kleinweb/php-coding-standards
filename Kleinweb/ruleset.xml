@@ -120,6 +120,24 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <exclude name="Squiz.Commenting.FileComment.SpacingAfterOpen" />
     <exclude name="Squiz.Operators.IncrementDecrementUsage" />
     <exclude name="VariableAnalysis.CodeAnalysis.VariableAnalysis.UnusedVariable" />
+
+    <!--
+    While in theory we would like to require a short description for documenting
+    functions, the implementation of this sniff is terrible and does not allow
+    for any level of customisation. Most egregiously, it throws false positives
+    for inline `@var` annotations and constructor methods, both of which are
+    usually better off *without* a meaningless comment.
+
+    This has been the subject of some controversy in the WordPress Coding
+    Standards project. Disabling it is not an option for WordPress core because
+    a short comment is required in their standards. The WPCS issue has remained
+    open since 2015 because it's an upstream PHPCS issue (open since 2014). 
+
+    - <https://github.com/squizlabs/PHP_CodeSniffer/issues/258>
+    - <https://github.com/WordPress/WordPress-Coding-Standards/issues/403>
+    - <https://github.com/ampproject/amp-wp/issues/4756>
+    -->
+    <exclude name="Generic.Commenting.DocComment.MissingShort" />
   </rule>
 
   <!-- We are not hosted on WordPress VIP, but their standards reflect best practices. -->
