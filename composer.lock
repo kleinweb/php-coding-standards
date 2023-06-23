@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8e99ea3667511062a2b94893221dee22",
+    "content-hash": "37c0e9df655223553ade27e5145d415a",
     "packages": [
         {
             "name": "automattic/vipwpcs",
