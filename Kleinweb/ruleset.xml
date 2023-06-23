@@ -55,6 +55,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <exclude name="Generic.Formatting" />
     <exclude name="Squiz.WhiteSpace" />
 
+    <exclude name="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing" />
+
     <!-- Handled by php-cs-fixer. -->
     <exclude name="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" />
     <exclude name="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue" />
