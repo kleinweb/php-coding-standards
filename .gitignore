@@ -1,3 +1,6 @@
+/.direnv
+result
+
 composer.phar
 /vendor/
 auth.json
