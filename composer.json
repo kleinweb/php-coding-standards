@@ -1,7 +1,6 @@
 {
   "name": "kleinweb/php-coding-standards",
   "description": "PHP coding standards for Klein Digitial Initiatives",
-  "version": "0.2.1",
   "type": "phpcodesniffer-standard",
   "keywords": [
     "phpcs",
