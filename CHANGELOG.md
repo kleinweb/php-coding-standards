@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.3.2](https://github.com/kleinweb/php-coding-standards/compare/0.3.1..0.3.2) - 2023-07-26
+#### Bug Fixes
+- **(release)** use correct tag push syntax - ([338d80e](https://github.com/kleinweb/php-coding-standards/commit/338d80e7304301494a2f732c3132ad4e2128238d)) - Chris Montgomery
+
+- - -
+
 ## [0.3.1](https://github.com/kleinweb/php-coding-standards/compare/0.3.0..0.3.1) - 2023-07-26
 #### Bug Fixes
 - **(release)** push after bump - ([3e49125](https://github.com/kleinweb/php-coding-standards/commit/3e4912562cfcbfa2fca2b1601cb049061c6e1780)) - Chris Montgomery
