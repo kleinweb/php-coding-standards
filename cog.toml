@@ -1,7 +1,10 @@
 ignore_merge_commits = true
-post_bump_hooks = []
+post_bump_hooks = [
+  "git push",
+  "git push {{version}}",
+]
 pre_bump_hooks = [
-  "composer validate"
+  "composer validate",
 ]
 
 [changelog]
