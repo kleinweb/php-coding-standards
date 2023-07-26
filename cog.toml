@@ -1,0 +1,12 @@
+ignore_merge_commits = true
+post_bump_hooks = []
+pre_bump_hooks = [
+  "composer validate"
+]
+
+[changelog]
+owner = "kleinweb"
+path = "CHANGELOG.md"
+remote = "github.com"
+repository = "php-coding-standards"
+template = "remote"
