@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.4.1](https://github.com/kleinweb/php-coding-standards/compare/0.4.0..0.4.1) - 2023-08-04
+#### Bug Fixes
+- ignore newly-observed array brace spacing rule - ([24e7666](https://github.com/kleinweb/php-coding-standards/commit/24e7666798cf84b19cd322bb48773300ece2f67e)) - Chris Montgomery
+
+- - -
+
 ## [0.4.0](https://github.com/kleinweb/php-coding-standards/compare/0.3.2..0.4.0) - 2023-08-04
 #### Miscellaneous Chores
 - **(deps)** composer update - ([6d99d17](https://github.com/kleinweb/php-coding-standards/commit/6d99d17994a5a032392d5eee2e761f82e1a850db)) - Chris Montgomery
