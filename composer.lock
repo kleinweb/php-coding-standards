@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/kleinweb/VIP-Coding-Standards.git",
-                "reference": "c0b7f558dc64f2bbadf3453ae5a9cdb7fb2632b5"
+                "reference": "a6a0d122a83051e9a7139eebf71ac9e2f6efef92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kleinweb/VIP-Coding-Standards/zipball/c0b7f558dc64f2bbadf3453ae5a9cdb7fb2632b5",
-                "reference": "c0b7f558dc64f2bbadf3453ae5a9cdb7fb2632b5",
+                "url": "https://api.github.com/repos/kleinweb/VIP-Coding-Standards/zipball/a6a0d122a83051e9a7139eebf71ac9e2f6efef92",
+                "reference": "a6a0d122a83051e9a7139eebf71ac9e2f6efef92",
                 "shasum": ""
             },
             "require": {
@@ -84,7 +84,7 @@
                 "wiki": "https://github.com/Automattic/VIP-Coding-Standards/wiki",
                 "source": "https://github.com/Automattic/VIP-Coding-Standards"
             },
-            "time": "2023-06-07T17:55:15+00:00"
+            "time": "2023-08-04T18:14:36+00:00"
         },
         {
             "name": "dealerdirect/phpcodesniffer-composer-installer",
@@ -358,16 +358,16 @@
         },
         {
             "name": "phpstan/phpdoc-parser",
-            "version": "1.23.0",
+            "version": "1.23.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpdoc-parser.git",
-                "reference": "a2b24135c35852b348894320d47b3902a94bc494"
+                "reference": "846ae76eef31c6d7790fac9bc399ecee45160b26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/a2b24135c35852b348894320d47b3902a94bc494",
-                "reference": "a2b24135c35852b348894320d47b3902a94bc494",
+                "url": "https://api.github.com/repos/phpstan/phpdoc-parser/zipball/846ae76eef31c6d7790fac9bc399ecee45160b26",
+                "reference": "846ae76eef31c6d7790fac9bc399ecee45160b26",
                 "shasum": ""
             },
             "require": {
@@ -399,9 +399,9 @@
             "description": "PHPDoc parser with support for nullable, intersection and generic types",
             "support": {
                 "issues": "https://github.com/phpstan/phpdoc-parser/issues",
-                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.23.0"
+                "source": "https://github.com/phpstan/phpdoc-parser/tree/1.23.1"
             },
-            "time": "2023-07-23T22:17:56+00:00"
+            "time": "2023-08-03T16:32:59+00:00"
         },
         {
             "name": "sirbrillig/phpcs-variable-analysis",
@@ -589,12 +589,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/WordPress/WordPress-Coding-Standards.git",
-                "reference": "2c593e4a6c8c7d71aac1f8682448417527874200"
+                "reference": "efbaa1df3cd584418a8908e0340f3b83d41b7cd1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/2c593e4a6c8c7d71aac1f8682448417527874200",
-                "reference": "2c593e4a6c8c7d71aac1f8682448417527874200",
+                "url": "https://api.github.com/repos/WordPress/WordPress-Coding-Standards/zipball/efbaa1df3cd584418a8908e0340f3b83d41b7cd1",
+                "reference": "efbaa1df3cd584418a8908e0340f3b83d41b7cd1",
                 "shasum": ""
             },
             "require": {
@@ -638,7 +638,7 @@
                 "source": "https://github.com/WordPress/WordPress-Coding-Standards",
                 "wiki": "https://github.com/WordPress/WordPress-Coding-Standards/wiki"
             },
-            "time": "2023-07-24T08:58:06+00:00"
+            "time": "2023-07-28T14:57:50+00:00"
         }
     ],
     "packages-dev": [],
