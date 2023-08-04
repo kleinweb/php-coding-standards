@@ -54,6 +54,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <!-- Opinionated formatting rules are handled by php-cs-fixer. -->
     <exclude name="Generic.Formatting" />
     <exclude name="Squiz.WhiteSpace" />
+    <exclude name="NormalizedArrays.Arrays.ArrayBraceSpacing" />
 
     <exclude name="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing" />
 
