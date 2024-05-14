@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!--
-SPDX-FileCopyrightText: 2023 Temple University <kleinweb@temple.edu>
+SPDX-FileCopyrightText: 2023-2024 Temple University <kleinweb@temple.edu>
 SPDX-License-Identifier: GPL-3.0-or-later
 -->
 
@@ -46,7 +46,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <exclude-pattern>*/dist/</exclude-pattern>
   <exclude-pattern>*/vendor/*</exclude-pattern>
   <exclude-pattern>*/web/wp</exclude-pattern>
-  <exclude-pattern>*/web/app/themes/twentytwentythree/</exclude-pattern>
+  <exclude-pattern>*/themes/twentytwenty*/</exclude-pattern>
 
   <!-- === Rules ============================================================================= -->
 
@@ -106,6 +106,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <exclude name="Universal.UseStatements.DisallowUseClass.FoundWithoutAlias" />
 
     <exclude name="WordPress.Arrays.ArrayDeclarationSpacing" />
+    <!-- TODO: maybe remove -->
+    <!-- https://github.com/WordPress/WordPress-Coding-Standards/wiki/Upgrade-Guide-to-WordPressCS-3.0.0-for-ruleset-maintainers#sniffs -->
+    <!-- <exclude name="NormalizedArrays.Arrays.ArrayDeclarationSpacing" /> -->
     <exclude name="WordPress.Arrays.ArrayIndentation" />
     <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
     <exclude name="WordPress.WhiteSpace.CastStructureSpacing" />
@@ -134,7 +137,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
     This has been the subject of some controversy in the WordPress Coding
     Standards project. Disabling it is not an option for WordPress core because
     a short comment is required in their standards. The WPCS issue has remained
-    open since 2015 because it's an upstream PHPCS issue (open since 2014). 
+    open since 2015 because it's an upstream PHPCS issue (open since 2014).
 
     - <https://github.com/squizlabs/PHP_CodeSniffer/issues/258>
     - <https://github.com/WordPress/WordPress-Coding-Standards/issues/403>
