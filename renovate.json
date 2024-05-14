@@ -1,6 +1,32 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
-  ]
+    "config:base",
+    "config:recommended",
+    ":approveMajorUpdates",
+    ":rebaseStalePrs",
+    ":renovatePrefix",
+    ":semanticCommits",
+    ":semanticCommitScope(deps)",
+    ":semanticPrefixFixDepsChoreOthers",
+    "group:recommended",
+    "group:wordpressMonorepo",
+    "schedule:automergeDaily",
+    "schedule:earlyMondays",
+    "schedule:weekends"
+  ],
+  "addLabels": ["automated", "scope:deps"],
+  "lockFileMaintenance": { "enabled": true },
+  "nix": {
+    "enabled": true
+  },
+  "packageRules": [
+    {
+      "description": "Automerge non-major dev-only updates",
+      "matchDepTypes": ["devDependencies", "require-dev"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true
+    }
+  ],
+  "platformAutomerge": true
 }
