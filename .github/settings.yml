@@ -51,15 +51,15 @@ milestones:
 ## Collaborators: give specific users access to this repository.
 # See https://docs.github.com/en/rest/reference/repos#add-a-repository-collaborator for available options
 collaborators:
-  - username: kleinit
-    # Note: `permission` is only valid on organization-owned repositories.
-    # The permission to grant the collaborator. Can be one of:
-    # * `pull` - can pull, but not push to or administer this repository.
-    # * `push` - can pull and push, but not administer this repository.
-    # * `admin` - can pull, push and administer this repository.
-    # * `maintain` - Recommended for project managers who need to manage the repository without access to sensitive or destructive actions.
-    # * `triage` - Recommended for contributors who need to proactively manage issues and pull requests without write access.
-    permission: push
+  # - username: kleinit
+  # Note: `permission` is only valid on organization-owned repositories.
+  # The permission to grant the collaborator. Can be one of:
+  # * `pull` - can pull, but not push to or administer this repository.
+  # * `push` - can pull and push, but not administer this repository.
+  # * `admin` - can pull, push and administer this repository.
+  # * `maintain` - Recommended for project managers who need to manage the repository without access to sensitive or destructive actions.
+  # * `triage` - Recommended for contributors who need to proactively manage issues and pull requests without write access.
+  # permission: push
 
 ## See https://docs.github.com/en/rest/reference/teams#add-or-update-team-repository-permissions for available options
 teams:
@@ -79,7 +79,8 @@ branches:
     protection:
       # Required. Require at least one approving review on a pull request, before merging. Set to null to disable.
 
-      # these settings are the same as manually enabling "Require a pull request before merging" but not setting any other restrictions
+      # These settings are the same as manually enabling "Require a pull request
+      # before merging" but not setting any other restrictions
       required_pull_request_reviews:
         # The number of approvals required.  (1-6)
         required_approving_review_count: 0
@@ -91,9 +92,9 @@ branches:
         # an empty dismissal_restrictions object to disable.  User and team
         # dismissal_restrictions are only available for organization-owned
         # repositories.  Omit this parameter for personal repositories.
-        # dismissal_restrictions:
-        #   users: []
-        #   teams: []
+        dismissal_restrictions:
+          users: []
+          teams: []
         require_last_push_approval: false
 
       # Required.  Require status checks to pass before merging.
