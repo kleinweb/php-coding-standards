@@ -1,4 +1,7 @@
-/.direnv
+.cache
+.data
+.direnv
+.local
 result
 
 composer.phar
