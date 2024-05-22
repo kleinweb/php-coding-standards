@@ -96,7 +96,7 @@ SPDX-License-Identifier: GPL-3.0-or-later
        rules.  -->
   <rule ref="Squiz.Commenting.LongConditionClosingComment">
     <properties>
-      <property name="commentFormat" value="// end %s()" />
+      <property name="commentFormat" value="// end %s" />
     </properties>
   </rule>
 
