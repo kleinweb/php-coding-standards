@@ -14,11 +14,8 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
   <!-- === Configuration ===================================================================== -->
 
-  <!-- PHP Code Sniffer: keep your nose to yourself! -->
+  <!-- Check all PHP files in directory tree by default. -->
   <arg name="extensions" value="php" />
-  <exclude-pattern>*/node_modules/*</exclude-pattern>
-  <exclude-pattern>*.js</exclude-pattern>
-  <exclude-pattern>*.css</exclude-pattern>
 
   <!-- Show colors in console -->
   <arg value="-colors" />
@@ -28,6 +25,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
   <!-- Support for PHP 8.1+ -->
   <config name="testVersion" value="8.1-" />
+
+  <!-- PHP Code Sniffer: keep your nose to yourself! -->
+  <exclude-pattern>*.js</exclude-pattern>
+  <exclude-pattern>*.css</exclude-pattern>
 
 
   <!-- === Patterns ========================================================================== -->
@@ -45,9 +46,10 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <!-- PHPCS does not respect gitignore, so we must teach it. -->
   <exclude-pattern>*/build/</exclude-pattern>
   <exclude-pattern>*/dist/</exclude-pattern>
+  <exclude-pattern>*/node_modules/*</exclude-pattern>
+  <exclude-pattern>*/themes/twenty*/</exclude-pattern>
   <exclude-pattern>*/vendor/*</exclude-pattern>
-  <exclude-pattern>*/web/wp</exclude-pattern>
-  <exclude-pattern>*/themes/twentytwenty*/</exclude-pattern>
+  <exclude-pattern>*/wp/*</exclude-pattern>
 
   <!-- === Rules ============================================================================= -->
 
