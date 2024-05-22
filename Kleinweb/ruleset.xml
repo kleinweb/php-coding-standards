@@ -91,6 +91,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
   </rule>
 
+  <rule ref="Squiz.PHP.CommentedOutCode">
+    <properties>
+      <property name="maxPercentage" value="75"/>
+    </properties>
+  </rule>
+
   <rule ref="Squiz.NamingConventions.ValidVariableName">
     <!-- WordPress has a lot of snake_case variables and properties we need to deal with. -->
     <exclude name="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps" />
