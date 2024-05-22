@@ -119,9 +119,6 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <exclude name="Universal.UseStatements.DisallowUseClass.FoundWithoutAlias" />
 
     <exclude name="WordPress.Arrays.ArrayDeclarationSpacing" />
-    <!-- TODO: maybe remove -->
-    <!-- https://github.com/WordPress/WordPress-Coding-Standards/wiki/Upgrade-Guide-to-WordPressCS-3.0.0-for-ruleset-maintainers#sniffs -->
-    <!-- <exclude name="NormalizedArrays.Arrays.ArrayDeclarationSpacing" /> -->
     <exclude name="WordPress.Arrays.ArrayIndentation" />
     <exclude name="WordPress.Arrays.ArrayKeySpacingRestrictions" />
     <exclude name="WordPress.WhiteSpace.CastStructureSpacing" />
