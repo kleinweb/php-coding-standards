@@ -26,8 +26,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
   <!-- Show sniff codes in all reports -->
   <arg value="ns" />
 
-  <!-- Support for PHP 8.0+ -->
-  <config name="testVersion" value="8.0-" />
+  <!-- Support for PHP 8.1+ -->
+  <config name="testVersion" value="8.1-" />
+
 
   <!-- === Patterns ========================================================================== -->
 
