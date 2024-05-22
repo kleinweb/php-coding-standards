@@ -91,6 +91,15 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <exclude name="Squiz.Commenting.InlineComment.InvalidEndChar" />
   </rule>
 
+  <!-- Have code block comments look like // end foreach() etc.  The space-less
+       default looks like a mistake, and it conflicts with other formatting
+       rules.  -->
+  <rule ref="Squiz.Commenting.LongConditionClosingComment">
+    <properties>
+      <property name="commentFormat" value="// end %s()" />
+    </properties>
+  </rule>
+
   <rule ref="Squiz.PHP.CommentedOutCode">
     <properties>
       <property name="maxPercentage" value="75"/>
