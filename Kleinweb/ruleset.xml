@@ -156,8 +156,12 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <exclude name="Generic.Commenting.DocComment.MissingShort" />
   </rule>
 
-  <!-- We are not hosted on WordPress VIP, but their standards reflect best practices. -->
-  <!-- FIXME: uninstallable due to apparent php 8.0 incompatibility (at least without lots of pain) -->
-  <!-- <rule ref="WordPress-VIP-Go" /> -->
+  <!--
+      We are not hosted on WordPress VIP, but their standards generally reflect
+      best practices.  We intentionally are /not/ using the "WordPress-VIP-Go"
+      ruleset because most of those rules are very platform-specific.  There may
+      be some additions there worth considering, however.
+  -->
+  <!-- <rule ref="WordPressVIPMinimum" /> -->
 
 </ruleset>
