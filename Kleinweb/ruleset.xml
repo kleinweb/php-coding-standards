@@ -58,21 +58,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
 
   <rule ref="Doctrine">
     <!-- Opinionated formatting rules are handled by php-cs-fixer. -->
-    <exclude name="Generic.Formatting" />
-    <exclude name="Squiz.WhiteSpace" />
-    <exclude name="NormalizedArrays.Arrays.ArrayBraceSpacing" />
-
-    <!-- <exclude name="SlevomatCodingStandard.ControlStructures.JumpStatementsSpacing" /> -->
-
-    <!-- Handled by php-cs-fixer. -->
-    <!-- <exclude name="SlevomatCodingStandard.ControlStructures.DisallowYodaComparison" /> -->
-    <!-- <exclude name="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue" /> -->
-
-    <!-- We do want this sniff, but with an exception for empty functions. -->
-    <!-- <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine" /> -->
-
-    <!-- Handled by php-cs-fixer and PHPStan. -->
-    <!-- <exclude name="Squiz.Commenting.VariableComment.MissingVar" /> -->
+    <!-- <exclude name="Generic.Formatting" /> -->
+    <!-- <exclude name="Squiz.WhiteSpace" /> -->
+    <!-- <exclude name="NormalizedArrays.Arrays.ArrayBraceSpacing" /> -->
 
     <!-- Can cause errors when overriding base classes. -->
     <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint" />
