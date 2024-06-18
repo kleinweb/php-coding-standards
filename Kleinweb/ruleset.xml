@@ -62,6 +62,9 @@ SPDX-License-Identifier: GPL-3.0-or-later
     <!-- <exclude name="Squiz.WhiteSpace" /> -->
     <!-- <exclude name="NormalizedArrays.Arrays.ArrayBraceSpacing" /> -->
 
+    <!-- We do want this sniff, but with an exception for empty functions. -->
+    <exclude name="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine" />
+
     <!-- Can cause errors when overriding base classes. -->
     <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint" />
     <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint" />
