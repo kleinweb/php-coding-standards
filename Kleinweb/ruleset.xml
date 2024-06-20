@@ -132,12 +132,14 @@ command line will ignore all file tags.
   <rule ref="Generic.Files.OneObjectStructurePerFile"/>
   <rule ref="Squiz.Classes.ClassFileName"/>
 
-  <!-- Use camelCase -->
+  <!-- Use camelCase where feasible. -->
   <rule ref="Squiz.NamingConventions.ValidFunctionName">
     <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
   </rule>
   <rule ref="Squiz.NamingConventions.ValidVariableName">
-    <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore"/>
+    <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore" />
+    <!-- WordPress has a lot of snake_case variables and properties we need to deal with. -->
+    <exclude name="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps" />
   </rule>
 
   <!-- <https://github.com/slevomat/coding-standard/blob/master/README.md#alphabetical-list-of-sniffs> -->
@@ -224,12 +226,6 @@ command line will ignore all file tags.
       <property name="maxPercentage" value="75"/>
     </properties>
   </rule>
-
-  <!-- <rule ref="Squiz.NamingConventions.ValidVariableName"> -->
-  <!--   <!-\- WordPress has a lot of snake_case variables and properties we need to deal with. -\-> -->
-  <!--   <exclude name="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps" /> -->
-  <!--   <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore" /> -->
-  <!-- </rule> -->
 
 </ruleset>
 
