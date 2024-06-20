@@ -65,7 +65,7 @@ command line will ignore all file tags.
       them to our own mu-plugin or standard library.
   -->
 
-  <rule ref="WordPressVIPGo" />
+  <rule ref="WordPress-VIP-Go" />
 
   <!-- Reduce the risk of getting sucked into the fractal of bad design. -->
   <rule ref="Generic.PHP.NoSilencedErrors"/>
