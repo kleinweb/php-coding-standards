@@ -8,7 +8,10 @@
       ...
     }:
     let
-      commonPkgs = [ inputs'.phps.packages.env-php82 ];
+      commonPkgs = [
+        inputs'.nixpkgs-trunk.legacyPackages.biome
+        inputs'.phps.packages.env-php82
+      ];
     in
     {
       devShells = {
