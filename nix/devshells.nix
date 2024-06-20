@@ -32,8 +32,6 @@
               pkgs.cocogitto
               pkgs.git-cliff
               pkgs.nixfmt-rfc-style
-              pkgs.nodePackages.prettier
-              pkgs.treefmt
             ];
         };
         ci = pkgs.mkShell { buildInputs = commonPkgs; };
