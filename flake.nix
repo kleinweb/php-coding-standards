@@ -2,13 +2,17 @@
   description = "Klein College PHP Coding Standards";
 
   inputs = {
+    nixpkgs.follows = "nixos-unstable";
+    nixos-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-trunk.url = "github:NixOS/nixpkgs/master";
+
     flake-parts.url = "github:hercules-ci/flake-parts";
+
     phps.url = "github:loophp/nix-shell";
     pre-commit-hooks = {
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
   outputs =
