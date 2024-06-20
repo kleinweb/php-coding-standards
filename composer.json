@@ -25,7 +25,8 @@
   "scripts": {
     "ecs": "ecs check --config=$PRJ_ROOT/ecs.php",
     "fix": ["@ecs --fix --ansi", "@phpcbf"],
-    "lint": ["@ecs --ansi", "@phpcs"],
+    "check": ["@phpcs"],
+    "lint": ["@ecs --ansi", "@check"],
     "phpcbf": "phpcbf --extensions=php --standard=$PRJ_ROOT/phpcs.xml.dist",
     "phpcs": "phpcs --extensions=php --standard=$PRJ_ROOT/phpcs.xml.dist"
   }

@@ -10,7 +10,13 @@
     let
       commonPkgs = [
         inputs'.nixpkgs-trunk.legacyPackages.biome
+        inputs'.nixpkgs-trunk.legacyPackages.just
         inputs'.phps.packages.env-php82
+
+        # standard utils
+        pkgs.jq
+        pkgs.fd
+        pkgs.ripgrep
       ];
     in
     {

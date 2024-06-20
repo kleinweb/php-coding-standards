@@ -14,9 +14,7 @@ use PhpCsFixer\Fixer\ReturnNotation\SimplifiedNullReturnFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return ECSConfig::configure()
-    ->withPaths([
-        'ecs.php',
-    ])
+    ->withPaths(['ecs.php'])
     ->withPreparedSets(strict: true, common: true, psr12: true, symplify: true, cleanCode: true)
     ->withPhpCsFixerSets(symfony: true)
     ->withRules([PhpCsFixer\Fixer\Basic\SingleLineEmptyBodyFixer::class])
