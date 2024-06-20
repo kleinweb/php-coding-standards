@@ -1,0 +1,4 @@
+{
+  "composer.enable": true,
+  "php_code_sniffer.enabled": true
+}
