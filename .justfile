@@ -24,6 +24,27 @@ prj-title := env('KWG_PROJECT_TITLE')
 default:
   @just --choose
 
+# {{{ Release Management:
+
+[group: "releases"]
+[doc: "Release a release"]
+release *ARGS='--auto':
+  cog bump {{ARGS}}
+
+[group: "releases"]
+test-release *ARGS='--auto':
+  cog bump --dry-run {{ARGS}}
+
+# }}}
+
+# {{{ Checkers, Fixers, Formatters, and Linters
+
+[group: "qa"]
+[doc: "Check for any lint or formatting issues on project files"]
+check:
+  -biome check {{prj-root}}
+  -composer lint
+
 [group: "qa"]
 [doc: "Check for (non-stylistic) linting issues on project files"]
 lint:
@@ -41,6 +62,8 @@ fix:
 fmt:
   biome format --write {{prj-root}}
   composer ecs -- --fix
+
+# }}}
 
 [group: "php"]
 [doc: "Rebuild the Phpactor project index"]
