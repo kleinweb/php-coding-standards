@@ -4,7 +4,7 @@ post_bump_hooks = [
   "git push origin {{version}}",
 ]
 pre_bump_hooks = [
-  "composer validate",
+  "just check",
 ]
 
 [changelog]
