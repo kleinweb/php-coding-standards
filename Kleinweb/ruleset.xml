@@ -181,7 +181,6 @@ command line will ignore all file tags.
   <rule ref="SlevomatCodingStandard.Functions.UnusedParameter"/>
   <rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue"/>
   <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
-  <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedClassNameInAnnotation"/>
   <rule ref="SlevomatCodingStandard.Namespaces.FullyQualifiedExceptions"/>
   <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile"/>
   <rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration"/>
