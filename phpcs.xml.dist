@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<ruleset name="Kleinweb PHP Coding Standards">
+    <file>./ecs.php</file>
+
+    <rule ref="Kleinweb" />
+</ruleset>
