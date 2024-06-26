@@ -214,7 +214,6 @@ command line will ignore all file tags.
   <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
   <rule ref="SlevomatCodingStandard.Variables.DisallowVariableVariable"/>
   <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
-  <rule ref="SlevomatCodingStandard.Variables.UnusedVariable"/>
 
   <rule ref="Generic.Metrics.CyclomaticComplexity">
     <severity>0</severity>
