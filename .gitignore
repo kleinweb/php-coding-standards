@@ -3,6 +3,7 @@
 .direnv
 .local
 result
+.php-cs-fixer.cache
 
 composer.phar
 /vendor/
