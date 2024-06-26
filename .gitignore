@@ -1,19 +1,28 @@
+# Logs
+*.log
+
+# Secrets
+auth.json
+
+# Dependencies
+vendor
+
+# Context-specific
+.bin
 .cache
 .data
 .direnv
 .local
-result
+.run
 .php-cs-fixer.cache
 
-composer.phar
-/vendor/
-auth.json
+# Build artifacts
+result
 
 # Generated:
 /.pre-commit-config.yaml
 
-# Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
-# You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
+# Prevent downstream dependency hell
 composer.lock
 
 # User-specific tool configurations
