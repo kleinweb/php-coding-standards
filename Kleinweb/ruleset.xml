@@ -51,14 +51,12 @@ SPDX-License-Identifier: GPL-3.0-or-later AND MIT
     <exclude-pattern>*/vendor/*</exclude-pattern>
 
     <!-- Exclude WordPress core and core-managed files -->
+    <!-- TODO: exclude files by name, but watch out for greedy wildcard matches! -->
     <exclude-pattern>index.php</exclude-pattern>
     <exclude-pattern>*/plugins/hello.php</exclude-pattern>
     <exclude-pattern>*/plugins/index.php</exclude-pattern>
     <exclude-pattern>*/themes/index.php</exclude-pattern>
     <exclude-pattern>*/wp/*</exclude-pattern>
-    <exclude-pattern>wp-*.php</exclude-pattern>
-    <exclude-pattern>wp-admin/*</exclude-pattern>
-    <exclude-pattern>xmlrpc.php</exclude-pattern>
 
     <!-- === Rules ============================================================================= -->
 
