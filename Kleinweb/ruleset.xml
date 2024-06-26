@@ -6,223 +6,222 @@ SPDX-FileCopyrightText: 2024  Viktor Szépe
 SPDX-License-Identifier: GPL-3.0-or-later AND MIT
 -->
 
-<ruleset
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/squizlabs/PHP_CodeSniffer/master/phpcs.xsd"
-    name="Kleinweb">
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/PHPCSStandards/PHP_CodeSniffer/master/phpcs.xsd"
+         name="Kleinweb">
 
-  <description>The Kleinweb PHP Coding Standards</description>
+    <description>The PHP Coding Standards for the Klein College of Media and Communication</description>
 
-  <!-- === Configuration ===================================================================== -->
+    <!-- === Configuration ===================================================================== -->
 
-  <!-- Check all PHP files in directory tree by default. -->
-  <arg name="extensions" value="php" />
+    <!-- Check all PHP files in directory tree by default. -->
+    <arg name="extensions" value="php" />
 
-  <!-- Show colors in console -->
-  <arg value="-colors" />
-  <arg value="sp" />
-  <!-- Show sniff codes in all reports -->
-  <arg value="ns" />
+    <!-- Show colors in console -->
+    <arg value="-colors" />
+    <arg value="sp" />
 
-  <!-- Support for PHP 8.1+ -->
-  <config name="testVersion" value="8.1-" />
+    <!-- Show sniff codes in all reports -->
+    <arg value="ns" />
 
-  <!-- PHP Code Sniffer: keep your nose to yourself! -->
-  <exclude-pattern>*.js</exclude-pattern>
-  <exclude-pattern>*.css</exclude-pattern>
+    <!-- Support for PHP 8.1+ -->
+    <config name="testVersion" value="8.1-" />
+
+    <!-- PHP Code Sniffer: keep your nose to yourself! -->
+    <exclude-pattern>*.js</exclude-pattern>
+    <exclude-pattern>*.css</exclude-pattern>
 
 
-  <!-- === Patterns ========================================================================== -->
+    <!-- === Patterns ========================================================================== -->
 
-  <!--
-      If no files or directories are specified on the command line, fallback to
-      checking the directory containing `phpcs.xml`.
+    <!--
+        If no files or directories are specified on the command line, fallback
+        to checking the directory containing `phpcs.xml`.  File and directory
+        paths specified in a ruleset are relative to the ruleset's location.
+        Specifying any file or directory path on the command line will
+        ignore all file tags.
+    -->
 
-File and directory paths specified in a ruleset are relative to the
-ruleset's location, and that specifying any file or directory path on the
-command line will ignore all file tags.
-  -->
+    <!-- PHPCS does not respect gitignore, so we must teach it. -->
+    <exclude-pattern>*/build/</exclude-pattern>
+    <exclude-pattern>*/dist/</exclude-pattern>
+    <exclude-pattern>*/node_modules/*</exclude-pattern>
+    <exclude-pattern>*/result/*</exclude-pattern>
+    <exclude-pattern>*/themes/twenty*/</exclude-pattern>
+    <exclude-pattern>*/vendor/*</exclude-pattern>
 
-  <!-- PHPCS does not respect gitignore, so we must teach it. -->
-  <exclude-pattern>*/build/</exclude-pattern>
-  <exclude-pattern>*/dist/</exclude-pattern>
-  <exclude-pattern>*/node_modules/*</exclude-pattern>
-  <exclude-pattern>*/themes/twenty*/</exclude-pattern>
-  <exclude-pattern>*/vendor/*</exclude-pattern>
-  <exclude-pattern>*/wp/*</exclude-pattern>
+    <!-- === Rules ============================================================================= -->
 
-  <!-- === Rules ============================================================================= -->
+    <!--
+        We are not hosted on WordPress VIP, but their standards generally reflect
+        best practices in WordPress development.  While the rules tend to reflect
+        the platform-specific constraints of VIP-Go, they usually are worth
+        following regardless of platform.
 
-  <!--
-      We are not hosted on WordPress VIP, but their standards generally reflect
-      best practices in WordPress development.  While the rules tend to reflect
-      the platform-specific constraints of VIP-Go, they usually are worth
-      following regardless of platform.
+NOTE: Keep an eye out for misleading recommendations in messages, however.
+Many VIP Coding Standards messages assume the availability of the
+`vip-go-mu-plugins` and Jetpack.  Consider, on a case-by-case basis,
+adapting the `wpcom_vip_*` functions from `vip-go-mu-plugins` and adding
+them to our own mu-plugin or standard library.
+    -->
 
-      NOTE: Keep an eye out for misleading recommendations in messages, however.
-      Many VIP Coding Standards messages assume the availability of the
-      `vip-go-mu-plugins` and Jetpack.  Consider, on a case-by-case basis,
-      adapting the `wpcom_vip_*` functions from `vip-go-mu-plugins` and adding
-      them to our own mu-plugin or standard library.
-  -->
+    <rule ref="WordPress-VIP-Go" />
 
-  <rule ref="WordPress-VIP-Go" />
+    <!-- Reduce the risk of getting sucked into the fractal of bad design. -->
+    <rule ref="Generic.PHP.NoSilencedErrors"/>
+    <rule ref="Squiz.PHP.DiscouragedFunctions">
+        <properties>
+            <property name="forbiddenFunctions" type="array">
+                <!-- PHP built-in functions -->
+                <element key="array_push" value="null"/>
+                <element key="compact" value="null"/>
+                <element key="create_function" value="null"/>
+                <element key="define" value="null"/>
+                <element key="die" value="null"/>
+                <element key="echo" value="null"/>
+                <element key="error_log" value="null"/>
+                <element key="eval" value="null"/>
+                <element key="exit" value="null"/>
+                <element key="extract" value="null"/>
+                <element key="goto" value="null"/>
+                <element key="ini_set" value="null"/>
+                <element key="list" value="null"/>
+                <element key="phpinfo" value="null"/>
+                <element key="print_r" value="null"/>
+                <element key="print" value="null"/>
+                <element key="settype" value="null"/>
+                <element key="var_dump" value="null"/>
+                <!-- Symfony helpers -->
+                <element key="dd" value="null"/>
+                <element key="dump" value="null"/>
+                <!-- Laravel helpers -->
+                <element key="env" value="null"/>
+                <!-- Type checking and converting function -->
+                <element key="boolval" value="(bool)"/>
+                <element key="doubleval" value="(float)"/>
+                <element key="doubleval" value="floatval"/>
+                <element key="floatval" value="(float)"/>
+                <element key="intval" value="(int)"/>
+                <element key="is_double" value="is_float"/>
+                <element key="is_integer" value="is_int"/>
+                <element key="is_long" value="is_int"/>
+                <element key="is_null" value="null"/>
+                <element key="is_real" value="is_float"/>
+                <element key="strval" value="(string)"/>
+                <!-- Legacy function names -->
+                <element key="chop" value="rtrim"/>
+                <element key="close" value="closedir"/>
+                <element key="delete" value="unset"/>
+                <element key="fputs" value="fwrite"/>
+                <element key="ini_alter" value="ini_alter"/>
+                <element key="is_writeable" value="is_writable"/>
+                <element key="join" value="implode"/>
+                <element key="key_exists" value="array_key_exists"/>
+                <element key="mt_rand" value="random_int"/>
+                <element key="pos" value="current"/>
+                <element key="rand" value="random_int"/>
+                <element key="show_source" value="highlight_file"/>
+                <element key="sizeof" value="count"/>
+                <element key="strchr" value="strstr"/>
+            </property>
+        </properties>
+    </rule>
 
-  <!-- Reduce the risk of getting sucked into the fractal of bad design. -->
-  <rule ref="Generic.PHP.NoSilencedErrors"/>
-  <rule ref="Squiz.PHP.DiscouragedFunctions">
-    <properties>
-      <property name="forbiddenFunctions" type="array">
-        <!-- PHP built-in functions -->
-        <element key="array_push" value="null"/>
-        <element key="compact" value="null"/>
-        <element key="create_function" value="null"/>
-        <element key="define" value="null"/>
-        <element key="die" value="null"/>
-        <element key="echo" value="null"/>
-        <element key="error_log" value="null"/>
-        <element key="eval" value="null"/>
-        <element key="exit" value="null"/>
-        <element key="extract" value="null"/>
-        <element key="goto" value="null"/>
-        <element key="ini_set" value="null"/>
-        <element key="list" value="null"/>
-        <element key="phpinfo" value="null"/>
-        <element key="print_r" value="null"/>
-        <element key="print" value="null"/>
-        <element key="settype" value="null"/>
-        <element key="var_dump" value="null"/>
-        <!-- Symfony helpers -->
-        <element key="dd" value="null"/>
-        <element key="dump" value="null"/>
-        <!-- Laravel helpers -->
-        <element key="env" value="null"/>
-        <!-- Type checking and converting function -->
-        <element key="boolval" value="(bool)"/>
-        <element key="doubleval" value="(float)"/>
-        <element key="doubleval" value="floatval"/>
-        <element key="floatval" value="(float)"/>
-        <element key="intval" value="(int)"/>
-        <element key="is_double" value="is_float"/>
-        <element key="is_integer" value="is_int"/>
-        <element key="is_long" value="is_int"/>
-        <element key="is_null" value="null"/>
-        <element key="is_real" value="is_float"/>
-        <element key="strval" value="(string)"/>
-        <!-- Legacy function names -->
-        <element key="chop" value="rtrim"/>
-        <element key="close" value="closedir"/>
-        <element key="delete" value="unset"/>
-        <element key="fputs" value="fwrite"/>
-        <element key="ini_alter" value="ini_alter"/>
-        <element key="is_writeable" value="is_writable"/>
-        <element key="join" value="implode"/>
-        <element key="key_exists" value="array_key_exists"/>
-        <element key="mt_rand" value="random_int"/>
-        <element key="pos" value="current"/>
-        <element key="rand" value="random_int"/>
-        <element key="show_source" value="highlight_file"/>
-        <element key="sizeof" value="count"/>
-        <element key="strchr" value="strstr"/>
-      </property>
-    </properties>
-  </rule>
+    <!-- Files -->
+    <rule ref="Generic.Files.ExecutableFile"/>
+    <rule ref="Generic.Files.OneObjectStructurePerFile"/>
+    <rule ref="Squiz.Classes.ClassFileName"/>
 
-  <!-- Files -->
-  <rule ref="Generic.Files.ExecutableFile"/>
-  <rule ref="Generic.Files.OneObjectStructurePerFile"/>
-  <rule ref="Squiz.Classes.ClassFileName"/>
+    <!-- Use camelCase where feasible. -->
+    <rule ref="Squiz.NamingConventions.ValidFunctionName">
+        <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
+    </rule>
+    <rule ref="Squiz.NamingConventions.ValidVariableName">
+        <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore" />
+        <!-- WordPress has a lot of snake_case variables and properties we need to deal with. -->
+        <exclude name="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps" />
+    </rule>
 
-  <!-- Use camelCase where feasible. -->
-  <rule ref="Squiz.NamingConventions.ValidFunctionName">
-    <exclude name="Squiz.NamingConventions.ValidFunctionName.PrivateNoUnderscore"/>
-  </rule>
-  <rule ref="Squiz.NamingConventions.ValidVariableName">
-    <exclude name="Squiz.NamingConventions.ValidVariableName.PrivateNoUnderscore" />
-    <!-- WordPress has a lot of snake_case variables and properties we need to deal with. -->
-    <exclude name="Squiz.NamingConventions.ValidVariableName.MemberNotCamelCaps" />
-  </rule>
+    <!-- <https://github.com/slevomat/coding-standard/blob/master/README.md#alphabetical-list-of-sniffs> -->
+    <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation"/>
+    <rule ref="SlevomatCodingStandard.Attributes.DisallowAttributesJoining"/>
+    <rule ref="SlevomatCodingStandard.Attributes.RequireAttributeAfterDocComment"/>
+    <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
+    <rule ref="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants"/>
+    <rule ref="SlevomatCodingStandard.Classes.DisallowStringExpressionPropertyFetch"/>
+    <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/>
+    <rule ref="SlevomatCodingStandard.Classes.RequireAbstractOrFinal"/>
+    <rule ref="SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion"/>
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
+    <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming"/>
+    <rule ref="SlevomatCodingStandard.Classes.UselessLateStaticBinding"/>
+    <rule ref="SlevomatCodingStandard.Commenting.DeprecatedAnnotationDeclaration"/>
+    <rule ref="SlevomatCodingStandard.Commenting.DisallowCommentAfterCode"/>
+    <rule ref="SlevomatCodingStandard.Commenting.EmptyComment"/>
+    <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
+        <properties>
+            <property name="forbiddenAnnotations" type="array">
+                <element value="@package"/>
+                <element value="@copyright"/>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowContinueWithoutIntegerOperandInSwitch"/>
+    <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEmpty"/>
+    <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
+    <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
+    <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
+    <rule ref="SlevomatCodingStandard.Functions.DisallowEmptyFunction"/>
+    <rule ref="SlevomatCodingStandard.Functions.RequireArrowFunction"/>
+    <rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
+    <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
+    <rule ref="SlevomatCodingStandard.Functions.UnusedParameter"/>
+    <rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile"/>
+    <rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration"/>
+    <rule ref="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator"/>
+    <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
+    <rule ref="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators"/>
+    <rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator"/>
+    <rule ref="SlevomatCodingStandard.PHP.DisallowDirectMagicInvokeCall"/>
+    <rule ref="SlevomatCodingStandard.PHP.DisallowReference"/>
+    <rule ref="SlevomatCodingStandard.PHP.RequireExplicitAssertion"/>
+    <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc"/>
+    <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
+    <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+        <properties>
+            <property name="linesCountBeforeDeclare" value="1"/>
+            <property name="linesCountAfterDeclare" value="1"/>
+            <property name="spacesCountAroundEqualsSign" value="0"/>
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
+        <properties>
+            <property name="shortNullable" value="yes" />
+        </properties>
+    </rule>
+    <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
+    <rule ref="SlevomatCodingStandard.Variables.DisallowVariableVariable"/>
+    <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
 
-  <!-- <https://github.com/slevomat/coding-standard/blob/master/README.md#alphabetical-list-of-sniffs> -->
-  <rule ref="SlevomatCodingStandard.Arrays.DisallowImplicitArrayCreation"/>
-  <rule ref="SlevomatCodingStandard.Attributes.DisallowAttributesJoining"/>
-  <rule ref="SlevomatCodingStandard.Attributes.RequireAttributeAfterDocComment"/>
-  <rule ref="SlevomatCodingStandard.Classes.ClassConstantVisibility"/>
-  <rule ref="SlevomatCodingStandard.Classes.DisallowLateStaticBindingForConstants"/>
-  <rule ref="SlevomatCodingStandard.Classes.DisallowStringExpressionPropertyFetch"/>
-  <rule ref="SlevomatCodingStandard.Classes.ModernClassNameReference"/>
-  <rule ref="SlevomatCodingStandard.Classes.RequireAbstractOrFinal"/>
-  <rule ref="SlevomatCodingStandard.Classes.RequireConstructorPropertyPromotion"/>
-  <rule ref="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming"/>
-  <rule ref="SlevomatCodingStandard.Classes.SuperfluousInterfaceNaming"/>
-  <rule ref="SlevomatCodingStandard.Classes.SuperfluousExceptionNaming"/>
-  <rule ref="SlevomatCodingStandard.Classes.SuperfluousTraitNaming"/>
-  <rule ref="SlevomatCodingStandard.Classes.UselessLateStaticBinding"/>
-  <rule ref="SlevomatCodingStandard.Commenting.DeprecatedAnnotationDeclaration"/>
-  <rule ref="SlevomatCodingStandard.Commenting.DisallowCommentAfterCode"/>
-  <rule ref="SlevomatCodingStandard.Commenting.EmptyComment"/>
-  <rule ref="SlevomatCodingStandard.Commenting.ForbiddenAnnotations">
-    <properties>
-      <property name="forbiddenAnnotations" type="array">
-        <element value="@package"/>
-        <element value="@copyright"/>
-      </property>
-    </properties>
-  </rule>
-  <rule ref="SlevomatCodingStandard.ControlStructures.AssignmentInCondition"/>
-  <rule ref="SlevomatCodingStandard.ControlStructures.DisallowContinueWithoutIntegerOperandInSwitch"/>
-  <rule ref="SlevomatCodingStandard.ControlStructures.DisallowEmpty"/>
-  <rule ref="SlevomatCodingStandard.ControlStructures.EarlyExit"/>
-  <rule ref="SlevomatCodingStandard.Exceptions.DeadCatch"/>
-  <rule ref="SlevomatCodingStandard.Exceptions.ReferenceThrowableOnly"/>
-  <rule ref="SlevomatCodingStandard.Functions.DisallowEmptyFunction"/>
-  <rule ref="SlevomatCodingStandard.Functions.RequireArrowFunction"/>
-  <rule ref="SlevomatCodingStandard.Functions.StaticClosure"/>
-  <rule ref="SlevomatCodingStandard.Functions.UnusedInheritedVariablePassedToClosure"/>
-  <rule ref="SlevomatCodingStandard.Functions.UnusedParameter"/>
-  <rule ref="SlevomatCodingStandard.Functions.UselessParameterDefaultValue"/>
-  <rule ref="SlevomatCodingStandard.Namespaces.DisallowGroupUse"/>
-  <rule ref="SlevomatCodingStandard.Namespaces.RequireOneNamespaceInFile"/>
-  <rule ref="SlevomatCodingStandard.Namespaces.NamespaceDeclaration"/>
-  <rule ref="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator"/>
-  <rule ref="SlevomatCodingStandard.Operators.DisallowEqualOperators"/>
-  <rule ref="SlevomatCodingStandard.Operators.DisallowIncrementAndDecrementOperators"/>
-  <rule ref="SlevomatCodingStandard.Operators.RequireCombinedAssignmentOperator"/>
-  <rule ref="SlevomatCodingStandard.PHP.DisallowDirectMagicInvokeCall"/>
-  <rule ref="SlevomatCodingStandard.PHP.DisallowReference"/>
-  <rule ref="SlevomatCodingStandard.PHP.RequireExplicitAssertion"/>
-  <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc"/>
-  <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
-  <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
-  <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
-    <properties>
-      <property name="linesCountBeforeDeclare" value="1"/>
-      <property name="linesCountAfterDeclare" value="1"/>
-      <property name="spacesCountAroundEqualsSign" value="0"/>
-    </properties>
-  </rule>
-  <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
-  <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>
-  <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
-  <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/>
-  <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
-    <properties>
-      <property name="shortNullable" value="yes" />
-    </properties>
-  </rule>
-  <rule ref="SlevomatCodingStandard.TypeHints.UselessConstantTypeHint"/>
-  <rule ref="SlevomatCodingStandard.Variables.DisallowVariableVariable"/>
-  <rule ref="SlevomatCodingStandard.Variables.DuplicateAssignmentToVariable"/>
+    <rule ref="Generic.Metrics.CyclomaticComplexity">
+        <severity>0</severity>
+        <type>warning</type>
+    </rule>
 
-  <rule ref="Generic.Metrics.CyclomaticComplexity">
-    <severity>0</severity>
-    <type>warning</type>
-  </rule>
-
-  <rule ref="Squiz.PHP.CommentedOutCode">
-    <properties>
-      <property name="maxPercentage" value="75"/>
-    </properties>
-  </rule>
+    <rule ref="Squiz.PHP.CommentedOutCode">
+        <properties>
+            <property name="maxPercentage" value="75"/>
+        </properties>
+    </rule>
 
 </ruleset>
