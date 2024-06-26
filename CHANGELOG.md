@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.5.2](https://github.com/kleinweb/php-coding-standards/compare/409b27e9f5696950bbada7ec5eaa4a1678c75d26..0.5.2) - 2024-06-26
+#### Bug Fixes
+- prevent ignoring all wp-content-rooted files - ([409b27e](https://github.com/kleinweb/php-coding-standards/commit/409b27e9f5696950bbada7ec5eaa4a1678c75d26)) - Chris Montgomery
+
+- - -
+
 ## [0.5.1](https://github.com/kleinweb/php-coding-standards/compare/7c2dc23b409bb4cde1f8433b4d5fbd44b7c67162..0.5.1) - 2024-06-26
 #### Bug Fixes
 - **(namespaces)** remove `FullyQualifiedExceptions` sniff due to conflict - ([0edcfcc](https://github.com/kleinweb/php-coding-standards/commit/0edcfccbb04d9e72c999cd7b1f1599bf88dbbab5)) - Chris Montgomery
