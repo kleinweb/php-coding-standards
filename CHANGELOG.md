@@ -2,6 +2,22 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.5.1](https://github.com/kleinweb/php-coding-standards/compare/7c2dc23b409bb4cde1f8433b4d5fbd44b7c67162..0.5.1) - 2024-06-26
+#### Bug Fixes
+- **(namespaces)** remove `FullyQualifiedExceptions` sniff due to conflict - ([0edcfcc](https://github.com/kleinweb/php-coding-standards/commit/0edcfccbb04d9e72c999cd7b1f1599bf88dbbab5)) - Chris Montgomery
+- **(variables)** remove redundant slevomat `UnusedVariable` sniff - ([7c2dc23](https://github.com/kleinweb/php-coding-standards/commit/7c2dc23b409bb4cde1f8433b4d5fbd44b7c67162)) - Chris Montgomery
+- exclude wp core paths - ([9d0fc1d](https://github.com/kleinweb/php-coding-standards/commit/9d0fc1d56b4354b7eb59f330bee349f67b71fa47)) - Chris Montgomery
+- replace ECS with PHP-CS-Fixer - ([bf2b6b1](https://github.com/kleinweb/php-coding-standards/commit/bf2b6b1a4479043f9bf709026849bb038a8a5ed8)) - Chris Montgomery
+#### Documentation
+- update - ([db0a358](https://github.com/kleinweb/php-coding-standards/commit/db0a35859327ddc1dc152467ceb89e96e21da12c)) - Chris Montgomery
+#### Miscellaneous Chores
+- gitignore improvements - ([955acb1](https://github.com/kleinweb/php-coding-standards/commit/955acb145f68a6b746c29b62279c37685655bc6e)) - Chris Montgomery
+- remove emacs file-local variables - ([dc0c557](https://github.com/kleinweb/php-coding-standards/commit/dc0c55747b2f4e8371092b2976a20782437b010b)) - Chris Montgomery
+#### Style
+- unfortunate formatting changes - ([b181244](https://github.com/kleinweb/php-coding-standards/commit/b1812440f3dc9573cc8edd1c32f8a0d11e3825d0)) - Chris Montgomery
+
+- - -
+
 ## [0.5.0](https://github.com/kleinweb/php-coding-standards/compare/9e6656d6a3269ee0e8ea6f030d025033493f830a..0.5.0) - 2024-06-20
 #### Bug Fixes
 - **(prj)** run `just check` before releases - ([e9b2157](https://github.com/kleinweb/php-coding-standards/commit/e9b2157295d940315e372fbf5f93ff6797765507)) - Chris Montgomery
