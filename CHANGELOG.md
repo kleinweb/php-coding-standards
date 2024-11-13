@@ -2,6 +2,17 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.6.0](https://github.com/kleinweb/php-coding-standards/compare/aa627a81bbe34f536ff8bec14910b6dc8085c434..0.6.0) - 2024-11-13
+#### Bug Fixes
+- remove requirement for static closures - ([7497d79](https://github.com/kleinweb/php-coding-standards/commit/7497d796d74a383010f09bc94940adb22777f37d)) - Chris Montgomery
+- adjust for some stylistic annoyances - ([cb879e9](https://github.com/kleinweb/php-coding-standards/commit/cb879e9c9b7bd88e116ce55bd1722816137bb1c3)) - Chris Montgomery
+#### Miscellaneous Chores
+- **(deps)** lock file maintenance - ([aa627a8](https://github.com/kleinweb/php-coding-standards/commit/aa627a81bbe34f536ff8bec14910b6dc8085c434)) - renovate[bot]
+- update flake - ([6bdde92](https://github.com/kleinweb/php-coding-standards/commit/6bdde925460db4980c265c40da0c25d12cbb5ebc)) - Chris Montgomery
+- remove unnecessary doctrine/coding-standard - ([aa3b5ad](https://github.com/kleinweb/php-coding-standards/commit/aa3b5ad1bcc1cd156898fcf792efdacec7694ced)) - Chris Montgomery
+
+- - -
+
 ## [0.5.2](https://github.com/kleinweb/php-coding-standards/compare/409b27e9f5696950bbada7ec5eaa4a1678c75d26..0.5.2) - 2024-06-26
 #### Bug Fixes
 - prevent ignoring all wp-content-rooted files - ([409b27e](https://github.com/kleinweb/php-coding-standards/commit/409b27e9f5696950bbada7ec5eaa4a1678c75d26)) - Chris Montgomery
