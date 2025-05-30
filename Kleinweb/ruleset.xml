@@ -219,6 +219,7 @@ them to our own mu-plugin or standard library.
     <rule ref="SlevomatCodingStandard.PHP.RequireNowdoc"/>
     <rule ref="SlevomatCodingStandard.PHP.TypeCast"/>
     <rule ref="SlevomatCodingStandard.PHP.OptimizedFunctionsWithoutUnpacking"/>
+    <rule ref="SlevomatCodingStandard.TypeHints.ClassConstantTypeHint"/>
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
         <properties>
             <property name="linesCountBeforeDeclare" value="1"/>
