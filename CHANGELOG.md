@@ -2,6 +2,12 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.7.2](https://github.com/kleinweb/php-coding-standards/compare/a0c6ae8bde41d48f31ad1e0ffe34310638f926b8..0.7.2) - 2025-05-30
+#### Bug Fixes
+- relax on some commonly-used forbidden functions - ([a0c6ae8](https://github.com/kleinweb/php-coding-standards/commit/a0c6ae8bde41d48f31ad1e0ffe34310638f926b8)) - Chris Montgomery
+
+- - -
+
 ## [0.7.1](https://github.com/kleinweb/php-coding-standards/compare/aa34990f1634d9e458e054b340c74666090aa05d..0.7.1) - 2025-05-30
 #### Bug Fixes
 - exclude sniff assuming the use of Jetpack - ([aa34990](https://github.com/kleinweb/php-coding-standards/commit/aa34990f1634d9e458e054b340c74666090aa05d)) - Chris Montgomery
