@@ -225,11 +225,11 @@ them to our own mu-plugin or standard library.
             <property name="spacesCountAroundEqualsSign" value="0"/>
         </properties>
     </rule>
+    <rule ref="SlevomatCodingStandard.TypeHints.DNFTypeHintFormat">
     <rule ref="SlevomatCodingStandard.TypeHints.LongTypeHints"/>
     <rule ref="SlevomatCodingStandard.TypeHints.NullTypeHintOnLastPosition"/>
     <rule ref="SlevomatCodingStandard.TypeHints.NullableTypeForNullDefaultValue"/>
     <rule ref="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/>
-    <rule ref="SlevomatCodingStandard.TypeHints.UnionTypeHintFormat">
         <properties>
             <property name="shortNullable" value="yes" />
         </properties>
