@@ -74,6 +74,9 @@ them to our own mu-plugin or standard library.
         <!-- Exclude deprecated sniffs. -->
         <!-- TODO: Remove once upstream addresses deprecations. -->
         <exclude name="WordPressVIPMinimum.JS" />
+
+        <!-- Assumes the use of Jetpack. -->
+        <exclude name="WordPressVIPMinimum.Functions.RestrictedFunctions.wp_is_mobile_wp_is_mobile"/>
     </rule>
 
     <!-- Reduce the risk of getting sucked into the fractal of bad design. -->
