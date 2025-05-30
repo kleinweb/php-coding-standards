@@ -16,10 +16,6 @@ owner-name := 'Temple University'
 owner-email := 'kleinweb@temple.edu'
 owner-attr := owner-name + ' <' + owner-email + '>'
 
-## Project metadata
-prj-slug := env('KWG_PROJECT_SLUG')
-prj-title := env('KWG_PROJECT_TITLE')
-
 # Display a list of available tasks as the default command
 default:
   @just --choose
