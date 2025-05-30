@@ -20,7 +20,8 @@
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "ergebnis/composer-normalize": true
     },
-    "lock": false
+    "lock": false,
+    "sort-packages": true
   },
   "scripts": {
     "php-cs-fixer": "php-cs-fixer",
