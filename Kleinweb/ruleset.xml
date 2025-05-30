@@ -2,7 +2,7 @@
 
 <!--
 SPDX-FileCopyrightText: 2023-2025  Temple University <kleinweb@temple.edu>
-SPDX-FileCopyrightText: 2024  Viktor Szépe
+SPDX-FileCopyrightText: 2023-2025  Viktor Szépe
 SPDX-License-Identifier: GPL-3.0-or-later AND MIT
 -->
 
@@ -78,7 +78,7 @@ them to our own mu-plugin or standard library.
 
     <!-- Reduce the risk of getting sucked into the fractal of bad design. -->
     <rule ref="Generic.PHP.NoSilencedErrors"/>
-    <rule ref="Squiz.PHP.DiscouragedFunctions">
+    <rule ref="Generic.PHP.ForbiddenFunctions">
         <properties>
             <property name="forbiddenFunctions" type="array">
                 <!-- PHP built-in functions -->
