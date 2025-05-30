@@ -2,6 +2,24 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.7.0](https://github.com/kleinweb/php-coding-standards/compare/06545c037379ccfdc7d4d565699b8aef97d023e0..0.7.0) - 2025-05-30
+#### Bug Fixes
+- **(dev:just)** remove unused env vars - ([12d433b](https://github.com/kleinweb/php-coding-standards/commit/12d433b4f9c2492b5d92791e999178beaef2a35d)) - Chris Montgomery
+- address deprecated slevomat typehint format sniff - ([5f1adc8](https://github.com/kleinweb/php-coding-standards/commit/5f1adc8a5f5718456531430cd333989417b02697)) - Chris Montgomery
+- `ini_alter()` alternative suggestion - ([e5a1872](https://github.com/kleinweb/php-coding-standards/commit/e5a1872873b2e2985d4752bcb63ad2c496a9fdf4)) - Chris Montgomery
+- declare disallowed functions with Generic sniff - ([ab7d063](https://github.com/kleinweb/php-coding-standards/commit/ab7d063a6847d119bbc0d2be5503227b64d7cc0f)) - Chris Montgomery
+- sort composer package order - ([decdd1b](https://github.com/kleinweb/php-coding-standards/commit/decdd1bb9ef96ac05ebae050c040d59518e9b545)) - Chris Montgomery
+- prevent composer.lock creation - ([0fa5c58](https://github.com/kleinweb/php-coding-standards/commit/0fa5c589f8b08f13d208f016c59825a8b41055c0)) - Chris Montgomery
+- exclude vipwpcs javascript sniffs - ([f846a6b](https://github.com/kleinweb/php-coding-standards/commit/f846a6b7f7593077cbe5211c717e0695d1a1cf7a)) - Chris Montgomery
+#### Features
+- check class constant native typehints in php 8.3+ - ([1020e5e](https://github.com/kleinweb/php-coding-standards/commit/1020e5e57894c61e6166804a6673e353b6ff0ed4)) - Chris Montgomery
+- check named argument spacing - ([2c55f93](https://github.com/kleinweb/php-coding-standards/commit/2c55f939b08f44f9d7f5ac3072f0252edfb9fc32)) - Chris Montgomery
+#### Miscellaneous Chores
+- **(dev)** update flake - ([826beb9](https://github.com/kleinweb/php-coding-standards/commit/826beb9f0cf1b1d3140ec978347f9bcf613feb7b)) - Chris Montgomery
+- update copyright year - ([06545c0](https://github.com/kleinweb/php-coding-standards/commit/06545c037379ccfdc7d4d565699b8aef97d023e0)) - Chris Montgomery
+
+- - -
+
 ## [0.6.0](https://github.com/kleinweb/php-coding-standards/compare/aa627a81bbe34f536ff8bec14910b6dc8085c434..0.6.0) - 2024-11-13
 #### Bug Fixes
 - remove requirement for static closures - ([7497d79](https://github.com/kleinweb/php-coding-standards/commit/7497d796d74a383010f09bc94940adb22777f37d)) - Chris Montgomery
