@@ -19,7 +19,8 @@
     "allow-plugins": {
       "dealerdirect/phpcodesniffer-composer-installer": true,
       "ergebnis/composer-normalize": true
-    }
+    },
+    "lock": false
   },
   "scripts": {
     "php-cs-fixer": "php-cs-fixer",
