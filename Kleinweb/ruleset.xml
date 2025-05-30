@@ -7,15 +7,12 @@ SPDX-License-Identifier: GPL-3.0-or-later AND MIT
 -->
 
 <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/PHPCSStandards/PHP_CodeSniffer/master/phpcs.xsd"
+         xsi:noNamespaceSchemaLocation="https://schema.phpcodesniffer.com/phpcs.xsd"
          name="Kleinweb">
 
     <description>The PHP Coding Standards for the Klein College of Media and Communication</description>
 
     <!-- === Configuration ===================================================================== -->
-
-    <!-- Check all PHP files in directory tree by default. -->
-    <arg name="extensions" value="php" />
 
     <!-- Show colors in console -->
     <arg value="-colors" />
@@ -27,10 +24,10 @@ SPDX-License-Identifier: GPL-3.0-or-later AND MIT
     <!-- Support for PHP 8.1+ -->
     <config name="testVersion" value="8.1-" />
 
-    <!-- PHP Code Sniffer: keep your nose to yourself! -->
+    <!-- PHPCS is for PHP only. -->
+    <arg name="extensions" value="php" />
     <exclude-pattern>*.js</exclude-pattern>
     <exclude-pattern>*.css</exclude-pattern>
-
 
     <!-- === Patterns ========================================================================== -->
 
@@ -73,7 +70,11 @@ adapting the `wpcom_vip_*` functions from `vip-go-mu-plugins` and adding
 them to our own mu-plugin or standard library.
     -->
 
-    <rule ref="WordPress-VIP-Go" />
+    <rule ref="WordPress-VIP-Go">
+        <!-- Exclude deprecated sniffs. -->
+        <!-- TODO: Remove once upstream addresses deprecations. -->
+        <exclude name="WordPressVIPMinimum.JS" />
+    </rule>
 
     <!-- Reduce the risk of getting sucked into the fractal of bad design. -->
     <rule ref="Generic.PHP.NoSilencedErrors"/>
