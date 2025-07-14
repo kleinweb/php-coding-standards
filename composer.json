@@ -14,13 +14,11 @@
     "wp-coding-standards/wpcs": "^3.0"
   },
   "require-dev": {
-    "ergebnis/composer-normalize": "^2.43",
     "friendsofphp/php-cs-fixer": "^3.59"
   },
   "config": {
     "allow-plugins": {
-      "dealerdirect/phpcodesniffer-composer-installer": true,
-      "ergebnis/composer-normalize": true
+      "dealerdirect/phpcodesniffer-composer-installer": true
     },
     "lock": false,
     "sort-packages": true
