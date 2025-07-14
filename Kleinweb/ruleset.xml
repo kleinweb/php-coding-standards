@@ -57,6 +57,17 @@ SPDX-License-Identifier: GPL-3.0-or-later AND MIT
 
     <!-- === Rules ============================================================================= -->
 
+    <!-- Detect undefined and unused variables. -->
+    <rule ref="VariableAnalysis"/>
+    <rule ref="VariableAnalysis.CodeAnalysis.VariableAnalysis">
+        <properties>
+            <!-- <https://github.com/sirbrillig/phpcs-variable-analysis#:~:text=allowWordPressPassByRefFunctions> -->
+            <property name="allowWordPressPassByRefFunctions" value="true"/>
+            <!-- Allow unused variables with the underscore prefix (e.g. `$_fnord`) -->
+            <property name="ignoreUnusedRegexp" value="/^_/"/>
+        </properties>
+    </rule>
+
     <!--
         We are not hosted on WordPress VIP, but their standards generally reflect
         best practices in WordPress development.  While the rules tend to reflect
