@@ -2,6 +2,20 @@
 All notable changes to this project will be documented in this file. See [conventional commits](https://www.conventionalcommits.org/) for commit guidelines.
 
 - - -
+## [0.8.0](https://github.com/kleinweb/php-coding-standards/compare/4728029e28401e87b36fbd10044eb30598c41c13..0.8.0) - 2025-12-19
+#### Bug Fixes
+- allow increment and decrement operators - ([24100a2](https://github.com/kleinweb/php-coding-standards/commit/24100a284e1aed3ce36739d8aae15d95b1ec330b)) - chris montgomery
+- allow underscore-prefixed parameter names to go unused - ([9114a6a](https://github.com/kleinweb/php-coding-standards/commit/9114a6a524db4622ee18c5a1ca515b5e8bb55524)) - chris montgomery
+- allow `exit()` - ([4c50ae9](https://github.com/kleinweb/php-coding-standards/commit/4c50ae91c1b79b7cf2bc82aa0f09271dbd0533ee)) - Chris Montgomery
+#### Features
+- check variable usage with `VariableAnalysis` ruleset - ([adcc190](https://github.com/kleinweb/php-coding-standards/commit/adcc1906503002150287650c89271d8948580049)) - Chris Montgomery
+#### Miscellaneous Chores
+- remove composer-normalize - ([5e72556](https://github.com/kleinweb/php-coding-standards/commit/5e7255620145854764aab8d25c5f0414bebe8cbf)) - Chris Montgomery
+- update biome config - ([49f4896](https://github.com/kleinweb/php-coding-standards/commit/49f48962ee17896d0409fb63fd30abacebf5c5d0)) - Chris Montgomery
+- update flake - ([4728029](https://github.com/kleinweb/php-coding-standards/commit/4728029e28401e87b36fbd10044eb30598c41c13)) - Chris Montgomery
+
+- - -
+
 ## [0.7.2](https://github.com/kleinweb/php-coding-standards/compare/a0c6ae8bde41d48f31ad1e0ffe34310638f926b8..0.7.2) - 2025-05-30
 #### Bug Fixes
 - relax on some commonly-used forbidden functions - ([a0c6ae8](https://github.com/kleinweb/php-coding-standards/commit/a0c6ae8bde41d48f31ad1e0ffe34310638f926b8)) - Chris Montgomery
